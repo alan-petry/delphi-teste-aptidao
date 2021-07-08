@@ -1,0 +1,51 @@
+unit Entidades.Produtos;
+
+interface
+
+uses
+  System.SysUtils;
+
+type
+  TPRODUTOS = class
+    private
+    FCODIGO: Integer;
+    FDESCRICAO: string;
+    FPRECO_VENDA: Real;
+    public
+      constructor Create;
+      destructor Destroy; override;
+    published
+    property CODIGO: Integer read FCODIGO write FCODIGO;
+    property DESCRICAO: string read FDESCRICAO write FDESCRICAO;
+    property PRECO_VENDA: Real read FPRECO_VENDA write FPRECO_VENDA;
+
+    function Validar : Boolean;
+  end;
+implementation
+
+{ TPRODUTOS }
+
+constructor TPRODUTOS.Create;
+begin
+
+end;
+
+destructor TPRODUTOS.Destroy;
+begin
+
+  inherited;
+end;
+
+function TPRODUTOS.Validar: Boolean;
+begin
+  Result := False;
+  if FDESCRICAO = '' then
+    raise Exception.Create('Informe a descrição do produto');
+  if FPRECO_VENDA <= 0 then
+    raise Exception.Create('Informe o preço de venda');
+
+
+  Result := True;
+end;
+
+end.

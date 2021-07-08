@@ -1,0 +1,109 @@
+unit Controller.Clientes;
+
+interface
+
+uses
+  Controller.Clientes.Interfaces, FireDAC.Comp.Client, System.SysUtils,
+  Data.DB;
+
+type
+  TCLIENTES = class(TInterfacedObject,iCLIENTES)
+    private
+      FConnection : TFDConnection;
+      FQuery : TFDQuery;
+      FDatasource : TDataSource;
+    public
+      constructor Create(aConnection : TFDConnection);
+      destructor Destroy; override;
+      class function New(aConnection : TFDConnection) : iCLIENTES;
+
+    function Inserir : iCLIENTES;
+    function Atualizar : iCLIENTES;
+    function Excluir : iCLIENTES;
+    function Datasource(aDatasource : TDatasource) : iCLIENTES;
+    function Buscar : iCLIENTES; overload;
+    function Buscar(filtro : string) : iCLIENTES; overload;
+  end;
+
+implementation
+
+{ TCLIENTES }
+
+function TCLIENTES.Atualizar: iCLIENTES;
+begin
+  Result := Self;
+end;
+
+function TCLIENTES.Buscar(filtro: string): iCLIENTES;
+var sql, ordem : string;
+begin
+  Result := Self;
+  FQuery.Close;
+  FQuery.SQL.Clear;
+  sql := 'select * from CLIENTES';
+  ordem := ' order by NOME';
+  if filtro <> '' then
+  begin
+    try
+      sql := sql + ' where CODIGO = '+strtoint(filtro);
+    except
+      sql := sql + ' where NOME LIKE '+QuotedStr('%'+filtro+'%');
+    end;
+  end;
+
+  try
+    FQuery.Open(sql + ordem);
+  except
+    raise Exception.Create('Erro na busca de dados');
+  end;
+end;
+
+function TCLIENTES.Buscar: iCLIENTES;
+begin
+  Result := Self;
+  FQuery.Close;
+  FQuery.SQL.Clear;
+  try
+    FQuery.Open('select * from CLIENTES order by NOME');
+  except
+    raise Exception.Create('Erro na busca de dados');
+  end;
+end;
+
+constructor TCLIENTES.Create(aConnection : TFDConnection);
+begin
+  FConnection := aConnection;
+  FQuery := TFDQuery.Create(nil);
+  FQuery.Connection := FConnection;
+end;
+
+function TCLIENTES.Datasource(aDatasource: TDatasource): iCLIENTES;
+begin
+  Result := Self;
+  FDataSource := aDataSource;
+  FDatasource.DataSet := FQuery;
+end;
+
+destructor TCLIENTES.Destroy;
+begin
+  FreeAndNil(FQuery);
+  FConnection.Connected := False;
+  inherited;
+end;
+
+function TCLIENTES.Excluir: iCLIENTES;
+begin
+  Result := Self;
+end;
+
+function TCLIENTES.Inserir: iCLIENTES;
+begin
+  Result := Self;
+end;
+
+class function TCLIENTES.New(aConnection : TFDConnection) : iCLIENTES;
+begin
+  Result := Self.Create(aConnection);
+end;
+
+end.

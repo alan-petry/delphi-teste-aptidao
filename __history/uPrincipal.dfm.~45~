@@ -1,0 +1,388 @@
+object frmPedidos: TfrmPedidos
+  Left = 0
+  Top = 0
+  Caption = 'Teste de aptid'#227'o - Alan Petry'
+  ClientHeight = 558
+  ClientWidth = 807
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel2: TPanel
+    Left = 0
+    Top = 0
+    Width = 807
+    Height = 558
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 0
+    ExplicitLeft = 208
+    ExplicitTop = 104
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object panelTopo: TPanel
+      Left = 0
+      Top = 0
+      Width = 807
+      Height = 33
+      Align = alTop
+      Alignment = taLeftJustify
+      BevelOuter = bvNone
+      Caption = '--> Lan'#231'amento de pedidos'
+      Color = 9463090
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -16
+      Font.Name = 'Segoe UI Semibold'
+      Font.Style = []
+      Padding.Left = 30
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 0
+      OnDblClick = panelTopoDblClick
+      ExplicitTop = 8
+    end
+    object pnlPedidos: TPanel
+      Left = 0
+      Top = 33
+      Width = 807
+      Height = 152
+      Align = alTop
+      BevelOuter = bvNone
+      Color = 11763262
+      ParentBackground = False
+      TabOrder = 1
+      ExplicitTop = 27
+      object Label2: TLabel
+        Left = 71
+        Top = 86
+        Width = 27
+        Height = 13
+        Alignment = taRightJustify
+        Caption = 'Data:'
+      end
+      object edtPedido: TLabeledEdit
+        Left = 104
+        Top = 19
+        Width = 121
+        Height = 21
+        EditLabel.Width = 36
+        EditLabel.Height = 13
+        EditLabel.Caption = 'Pedido:'
+        EditLabel.Color = clBlack
+        EditLabel.ParentColor = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        LabelPosition = lpLeft
+        NumbersOnly = True
+        ParentFont = False
+        TabOrder = 0
+      end
+      object dtData: TDateTimePicker
+        Left = 104
+        Top = 78
+        Width = 121
+        Height = 21
+        Date = 44385.000000000000000000
+        Time = 0.369219560183410100
+        TabOrder = 2
+      end
+      object edtCliente: TLabeledEdit
+        Left = 104
+        Top = 49
+        Width = 121
+        Height = 21
+        EditLabel.Width = 37
+        EditLabel.Height = 13
+        EditLabel.Caption = 'Cliente:'
+        LabelPosition = lpLeft
+        NumbersOnly = True
+        TabOrder = 1
+        OnChange = edtClienteChange
+        OnKeyPress = edtClienteKeyPress
+      end
+      object edtNome: TLabeledEdit
+        Left = 231
+        Top = 49
+        Width = 248
+        Height = 21
+        TabStop = False
+        EditLabel.Width = 3
+        EditLabel.Height = 13
+        NumbersOnly = True
+        ReadOnly = True
+        TabOrder = 3
+      end
+      object btnBuscarPedido: TButton
+        Left = 231
+        Top = 18
+        Width = 122
+        Height = 25
+        Caption = 'Buscar Pedido'
+        TabOrder = 4
+        OnClick = btnBuscarPedidoClick
+      end
+      object btnExcluirPedido: TButton
+        Left = 357
+        Top = 18
+        Width = 122
+        Height = 25
+        Caption = 'Excluir Pedido'
+        TabOrder = 5
+        OnClick = btnExcluirPedidoClick
+      end
+    end
+    object pnlItens: TPanel
+      Left = 0
+      Top = 361
+      Width = 807
+      Height = 112
+      Align = alTop
+      BevelOuter = bvNone
+      TabOrder = 2
+      object DBGrid1: TDBGrid
+        Left = 0
+        Top = 0
+        Width = 807
+        Height = 112
+        Align = alClient
+        DataSource = dtsItens
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+        OnKeyDown = DBGrid1KeyDown
+        OnKeyPress = DBGrid1KeyPress
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'ITEM'
+            Width = 80
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'PRODUTO'
+            Width = 80
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'DESCRICAO'
+            Width = 300
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'QUANTIDADE'
+            Width = 80
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'UNITARIO'
+            Width = 80
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'TOTAL'
+            Width = 80
+            Visible = True
+          end>
+      end
+    end
+    object pnlProdutos: TPanel
+      Left = 0
+      Top = 185
+      Width = 807
+      Height = 176
+      Align = alTop
+      BevelOuter = bvNone
+      TabOrder = 3
+      object edtProduto: TLabeledEdit
+        Left = 104
+        Top = 24
+        Width = 121
+        Height = 21
+        EditLabel.Width = 42
+        EditLabel.Height = 13
+        EditLabel.Caption = 'Produto:'
+        NumbersOnly = True
+        TabOrder = 0
+        OnKeyPress = edtProdutoKeyPress
+      end
+      object edtQuantidade: TLabeledEdit
+        Left = 104
+        Top = 72
+        Width = 121
+        Height = 21
+        EditLabel.Width = 60
+        EditLabel.Height = 13
+        EditLabel.Caption = 'Quantidade:'
+        TabOrder = 1
+        OnChange = edtQuantidadeChange
+        OnKeyPress = edtQuantidadeKeyPress
+      end
+      object edtUnitario: TLabeledEdit
+        Left = 231
+        Top = 72
+        Width = 121
+        Height = 21
+        EditLabel.Width = 41
+        EditLabel.Height = 13
+        EditLabel.Caption = 'Unit'#225'rio:'
+        TabOrder = 2
+        OnChange = edtQuantidadeChange
+      end
+      object edtDescricao: TLabeledEdit
+        Left = 231
+        Top = 24
+        Width = 248
+        Height = 21
+        TabStop = False
+        EditLabel.Width = 50
+        EditLabel.Height = 13
+        EditLabel.Caption = 'Descri'#231#227'o:'
+        NumbersOnly = True
+        ReadOnly = True
+        TabOrder = 3
+      end
+      object edtTotal: TLabeledEdit
+        Left = 358
+        Top = 72
+        Width = 121
+        Height = 21
+        TabStop = False
+        EditLabel.Width = 28
+        EditLabel.Height = 13
+        EditLabel.Caption = 'Total:'
+        ReadOnly = True
+        TabOrder = 4
+      end
+      object pnlBotoes: TPanel
+        Left = 0
+        Top = 135
+        Width = 807
+        Height = 41
+        Align = alBottom
+        BevelOuter = bvNone
+        Color = 9463090
+        ParentBackground = False
+        TabOrder = 5
+        ExplicitTop = 129
+        object btnInserirItem: TButton
+          Left = 23
+          Top = 8
+          Width = 122
+          Height = 25
+          Caption = 'Inserir Item'
+          TabOrder = 0
+          OnClick = btnInserirItemClick
+        end
+        object Button1: TButton
+          Left = 151
+          Top = 8
+          Width = 122
+          Height = 25
+          Caption = 'Excluir Item'
+          TabOrder = 1
+          OnClick = Button1Click
+        end
+        object btnGravarPedido: TButton
+          Left = 358
+          Top = 10
+          Width = 122
+          Height = 25
+          Caption = 'Gravar Pedido'
+          TabOrder = 2
+          OnClick = btnGravarPedidoClick
+        end
+      end
+    end
+    object Panel1: TPanel
+      Left = 0
+      Top = 517
+      Width = 807
+      Height = 41
+      Align = alBottom
+      BevelOuter = bvNone
+      Color = 9463090
+      ParentBackground = False
+      TabOrder = 4
+      ExplicitTop = 129
+      object edtTotalPedido: TLabeledEdit
+        Left = 358
+        Top = 12
+        Width = 121
+        Height = 21
+        TabStop = False
+        EditLabel.Width = 78
+        EditLabel.Height = 13
+        EditLabel.Caption = 'Total do Pedido:'
+        LabelPosition = lpLeft
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+  end
+  object dtsItens: TDataSource
+    AutoEdit = False
+    DataSet = FDMTItens
+    Left = 736
+    Top = 240
+  end
+  object dtsClientes: TDataSource
+    Left = 736
+    Top = 65
+  end
+  object dtsProdutos: TDataSource
+    Left = 736
+    Top = 121
+  end
+  object FDMTItens: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Left = 736
+    Top = 193
+    object FDMTItensITEM: TIntegerField
+      FieldName = 'ITEM'
+    end
+    object FDMTItensPRODUTO: TIntegerField
+      FieldName = 'PRODUTO'
+    end
+    object FDMTItensDESCRICAO: TStringField
+      FieldName = 'DESCRICAO'
+      Size = 100
+    end
+    object FDMTItensQUANTIDADE: TFloatField
+      FieldName = 'QUANTIDADE'
+    end
+    object FDMTItensUNITARIO: TFloatField
+      FieldName = 'UNITARIO'
+    end
+    object FDMTItensTOTAL: TFloatField
+      FieldName = 'TOTAL'
+    end
+    object FDMTItensID_ITEM: TIntegerField
+      FieldName = 'ID_ITEM'
+    end
+  end
+end

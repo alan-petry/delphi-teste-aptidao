@@ -1,0 +1,151 @@
+unit Controller.Itens_Pedidos;
+
+interface
+
+uses
+  Controller.Itens_Pedidos.Interfaces, FireDAC.Comp.Client, System.SysUtils,
+  Data.DB, Entidades.Itens_Pedidos;
+
+type
+  TITENS_PEDIDOS = class(TInterfacedObject,iITENS_PEDIDOS)
+    private
+      FConnection : TFDConnection;
+      FQuery : TFDQuery;
+      FDatasource : TDataSource;
+      FEntidade : TITEM_PEDIDO;
+    public
+      constructor Create(aConnection : TFDConnection);
+      destructor Destroy; override;
+      class function New(aConnection : TFDConnection) : iITENS_PEDIDOS;
+
+    function Inserir : iITENS_PEDIDOS;
+    function Atualizar : iITENS_PEDIDOS;
+    function Excluir : iITENS_PEDIDOS;
+    function Datasource(aDatasource : TDatasource) : iITENS_PEDIDOS;
+    function Dataset : TDataSet;
+    function Buscar(codigo : integer) : iITENS_PEDIDOS;
+    function Listar(pedido : integer) : iITENS_PEDIDOS;
+    function ITEM : TITEM_PEDIDO;
+  end;
+
+implementation
+
+{ TITENS_PEDIDOS }
+
+function TITENS_PEDIDOS.Atualizar: iITENS_PEDIDOS;
+var sql : string;
+begin
+  Result := Self;
+  FQuery.Close;
+  FQuery.SQL.Clear;
+  sql := 'update itens_pedidos set PRODUTO = :PRODUTO, QUANTIDADE = :QUANTIDADE, UNITARIO = :QUANTIDADE'
+        +' where ID_ITEM = :ID_ITEM';
+  try
+    FQuery.SQL.Add(sql);
+    FQuery.ParamByName('PRODUTO').Value := FEntidade.PRODUTO;
+    FQuery.ParamByName('QUANTIDADE').Value := FEntidade.QUANTIDADE;
+    FQuery.ParamByName('UNITARIO').Value := FEntidade.UNITARIO;
+    FQuery.ParamByName('ID_ITEM').Value := FEntidade.ID_ITEM;
+    FQuery.ExecSQL;
+  except
+    raise Exception.Create('Erro na atualização');
+  end;
+end;
+
+function TITENS_PEDIDOS.Buscar(codigo : integer) : iITENS_PEDIDOS;
+begin
+  Result := Self;
+  FQuery.Close;
+  FQuery.SQL.Clear;
+  try
+    FQuery.Open('select * from itens_pedidos where ID_ITEM = '+codigo.ToString);
+  except
+    raise Exception.Create('Erro na busca de dados');
+  end;
+end;
+
+constructor TITENS_PEDIDOS.Create(aConnection : TFDConnection);
+begin
+  FConnection := aConnection;
+  FQuery := TFDQuery.Create(nil);
+  FQuery.Connection := FConnection;
+  FEntidade := TITEM_PEDIDO.Create;
+end;
+
+function TITENS_PEDIDOS.Dataset: TDataSet;
+begin
+  Result := FQuery;
+end;
+
+function TITENS_PEDIDOS.Datasource(aDatasource: TDatasource): iITENS_PEDIDOS;
+begin
+  Result := Self;
+  FDataSource := aDataSource;
+  FDatasource.DataSet := FQuery;
+end;
+
+destructor TITENS_PEDIDOS.Destroy;
+begin
+  FreeAndNil(FQuery);
+  FreeAndNil(FEntidade);
+  inherited;
+end;
+
+function TITENS_PEDIDOS.Excluir: iITENS_PEDIDOS;
+var sql : string;
+begin
+  Result := Self;
+  FQuery.Close;
+  FQuery.SQL.Clear;
+  sql := 'delete from itens_pedidos where ID_ITEM = :ID_ITEM';
+  try
+    FQuery.SQL.Add(sql);
+    FQuery.ParamByName('ID_ITEM').Value := FEntidade.ID_ITEM;
+    FQuery.ExecSQL;
+  except
+    raise Exception.Create('Erro na exclusão');
+  end;
+end;
+
+function TITENS_PEDIDOS.Inserir: iITENS_PEDIDOS;
+var sql : string;
+begin
+  Result := Self;
+  FQuery.Close;
+  FQuery.SQL.Clear;
+  sql := 'insert into itens_pedidos (PEDIDO, PRODUTO, QUANTIDADE, UNITARIO) values (:PEDIDO, :PRODUTO, :QUANTIDADE, :UNITARIO)';
+  try
+    FQuery.SQL.Add(sql);
+    FQuery.ParamByName('PRODUTO').Value := FEntidade.PRODUTO;
+    FQuery.ParamByName('QUANTIDADE').Value := FEntidade.QUANTIDADE;
+    FQuery.ParamByName('UNITARIO').Value := FEntidade.UNITARIO;
+    FQuery.ParamByName('PEDIDO').Value := FEntidade.PEDIDO;
+    FQuery.ExecSQL;
+  except
+    raise Exception.Create('Erro na inserção');
+  end;
+end;
+
+function TITENS_PEDIDOS.ITEM: TITEM_PEDIDO;
+begin
+  Result := FEntidade;
+end;
+
+function TITENS_PEDIDOS.Listar(pedido: integer): iITENS_PEDIDOS;
+begin
+  Result := Self;
+  FQuery.Close;
+  FQuery.SQL.Clear;
+  try
+    FQuery.Open('select * from itens_pedidos where PEDIDO = '+pedido.ToString);
+  except
+    raise Exception.Create('Erro na busca de dados');
+  end;
+end;
+
+class function TITENS_PEDIDOS.New(aConnection : TFDConnection) : iITENS_PEDIDOS;
+begin
+  Result := Self.Create(aConnection);
+end;
+
+end.

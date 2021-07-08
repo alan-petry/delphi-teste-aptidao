@@ -1,0 +1,24 @@
+program Teste_Delphi;
+
+uses
+  Vcl.Forms,
+  uPrincipal in 'uPrincipal.pas' {Form1},
+  uDMDados in 'uDMDados.pas' {dmDados: TDataModule},
+  Controller.Clientes in 'Controller.Clientes.pas',
+  Controller.Clientes.Interfaces in 'Controller.Clientes.Interfaces.pas',
+  Entidades.Clientes in 'Entidades.Clientes.pas',
+  Entidades.Produtos in 'Entidades.Produtos.pas',
+  Controller.Produtos.Interfaces in 'Controller.Produtos.Interfaces.pas',
+  Controller.Produtos in 'Controller.Produtos.pas',
+  Entidades.Pedidos in 'Entidades.Pedidos.pas',
+  Entidades.Itens_Pedidos in 'Entidades.Itens_Pedidos.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TdmDados, dmDados);
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

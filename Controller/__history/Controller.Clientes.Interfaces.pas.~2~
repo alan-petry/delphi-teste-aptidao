@@ -1,0 +1,22 @@
+unit Controller.Clientes.Interfaces;
+
+interface
+
+uses
+  Data.DB;
+
+type
+  iCLIENTES = interface
+    ['{D016A75D-09F0-464A-AC89-3A601A6470B5}']
+    function Inserir : iCLIENTES;
+    function Atualizar : iCLIENTES;
+    function Excluir : iCLIENTES;
+    function Datasource(aDatasource : TDatasource) : iCLIENTES;
+    function Buscar : iCLIENTES; overload;
+    function Buscar(filtro : string) : iCLIENTES; overload;
+    function Buscar(codigo : integer) : iCLIENTES; overload;
+  end;
+
+implementation
+
+end.

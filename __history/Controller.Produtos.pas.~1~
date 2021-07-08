@@ -1,0 +1,45 @@
+unit Controller.Produtos;
+
+interface
+
+uses
+  FireDAC.Comp.Client,
+  Controller.Produtos.Interfaces;
+
+type
+  TPRODUTOS = class(TInterfacedObject,iPRODUTOS)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New(aConnection : TFDConnection) : iPRODUTOS;
+
+    function Inserir : iPRODUTOS;
+    function Atualizar : iPRODUTOS;
+    function Excluir : iPRODUTOS;
+    function Datasource(aDatasource : TDatasource) : iPRODUTOS;
+    function Buscar : iPRODUTOS; overload;
+    function Buscar(filtro : string) : iPRODUTOS; overload;
+  end;
+
+implementation
+
+{ TPRODUTOS }
+
+constructor TPRODUTOS.Create;
+begin
+
+end;
+
+destructor TPRODUTOS.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TPRODUTOS.New : iPRODUTOS;
+begin
+  Result := Self.Create;
+end;
+
+end.

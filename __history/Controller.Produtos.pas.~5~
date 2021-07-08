@@ -1,0 +1,87 @@
+unit Controller.Produtos;
+
+interface
+
+uses
+  FireDAC.Comp.Client, System.SysUtils,
+  Controller.Produtos.Interfaces,
+  Data.DB, Entidades.Produtos;
+
+type
+  TPRODUTOS = class(TInterfacedObject,iPRODUTOS)
+    private
+      FConnection : TFDConnection;
+      FQuery : TFDQuery;
+      FDatasource : TDataSource;
+      FEntidade : TPRODUTO;
+    public
+      constructor Create(aConnection : TFDConnection);
+      destructor Destroy; override;
+      class function New(aConnection : TFDConnection) : iPRODUTOS;
+
+    function Inserir : iPRODUTOS;
+    function Atualizar : iPRODUTOS;
+    function Excluir : iPRODUTOS;
+    function Datasource(aDatasource : TDatasource) : iPRODUTOS;
+    function Buscar : iPRODUTOS; overload;
+    function Buscar(filtro : string) : iPRODUTOS; overload;
+  end;
+
+implementation
+
+{ TPRODUTOS }
+
+function TPRODUTOS.Atualizar: iPRODUTOS;
+begin
+  Result := Self;
+end;
+
+function TPRODUTOS.Buscar: iPRODUTOS;
+begin
+  Result := Self;
+end;
+
+function TPRODUTOS.Buscar(filtro: string): iPRODUTOS;
+begin
+  Result := Self;
+end;
+
+constructor TPRODUTOS.Create(aConnection : TFDConnection);
+begin
+  FConnection := aConnection;
+  FQuery := TFDQuery.Create(nil);
+  FQuery.Connection := FConnection;
+  FEntidade := TPRODUTO.Create;
+end;
+
+function TPRODUTOS.Datasource(aDatasource: TDatasource): iPRODUTOS;
+begin
+  Result := Self;
+  FDatasource := aDatasource;
+  FDatasource.DataSet := FQuery;
+end;
+
+destructor TPRODUTOS.Destroy;
+begin
+  FreeandNil(FEntidade);
+  FreeandNil(FQuery);
+
+  inherited;
+end;
+
+function TPRODUTOS.Excluir: iPRODUTOS;
+begin
+  Result := Self;
+end;
+
+function TPRODUTOS.Inserir: iPRODUTOS;
+begin
+  Result := Self;
+end;
+
+class function TPRODUTOS.New (aConnection : TFDConnection) : iPRODUTOS;
+begin
+  Result := Self.Create(aConnection);
+end;
+
+end.

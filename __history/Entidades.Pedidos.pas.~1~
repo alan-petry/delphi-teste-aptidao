@@ -1,0 +1,21 @@
+unit Entidades.Pedidos;
+
+interface
+
+type
+  PEDIDO = class
+    private
+    FID_PEDIDO: Integer;
+    FDATA: TDate;
+    FTOTAL: Real;
+    FCLIENTE: Integer;
+    public
+    published
+      property ID_PEDIDO: Integer read FID_PEDIDO write FID_PEDIDO;
+      property DATA: TDate read FDATA write FDATA;
+      property TOTAL: Real read FTOTAL write FTOTAL;
+      property CLIENTE: Integer read FCLIENTE write FCLIENTE;
+  end;
+implementation
+
+end.

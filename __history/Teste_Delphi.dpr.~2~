@@ -1,0 +1,18 @@
+program Teste_Delphi;
+
+uses
+  Vcl.Forms,
+  uPrincipal in 'uPrincipal.pas' {Form1},
+  uDMDados in 'uDMDados.pas' {DataModule1: TDataModule},
+  Controller.Clientes in 'Controller.Clientes.pas',
+  Controller.Clientes.Interfaces in 'Controller.Clientes.Interfaces.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TDataModule1, DataModule1);
+  Application.Run;
+end.

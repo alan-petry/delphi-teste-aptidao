@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/07/06 13:25:13.000.270,=C:\Users\alanp\OneDrive\Meus Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/07/06 13:26:13.000.502,D:\Delphi\Projetos\Teste_Delphi\uPrincipal.pas=C:\Users\alanp\OneDrive\Meus Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/07/06 13:26:13.000.502,D:\Delphi\Projetos\Teste_Delphi\uPrincipal.dfm=C:\Users\alanp\OneDrive\Meus Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2021/07/06 13:26:26.000.080,D:\Delphi\Projetos\Teste_Delphi\Teste_Delphi.dproj=C:\Users\alanp\OneDrive\Meus Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2021/07/06 13:49:42.000.985,=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/06 13:54:58.000.040,D:\Delphi\Projetos\Teste_Delphi\uDMDados.pas=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/06 13:54:58.000.040,D:\Delphi\Projetos\Teste_Delphi\uDMDados.dfm=D:\Delphi\Projetos\Teste_Delphi\Unit1.dfm</Transaction>
+    <Transaction>2021/07/06 15:33:26.000.192,=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/06 15:35:36.000.567,D:\Delphi\Projetos\Teste_Delphi\Controller.Clientes.pas=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/06 15:35:41.000.867,=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/06 15:40:19.000.809,D:\Delphi\Projetos\Teste_Delphi\Controller.Clientes.Interfaces.pas=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/06 16:10:52.000.515,=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/06 16:18:57.000.681,D:\Delphi\Projetos\Teste_Delphi\Entidades.Clientes.pas=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/06 22:09:00.000.239,=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/06 22:14:13.000.030,D:\Delphi\Projetos\Teste_Delphi\Entidades.Produtos.pas=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/06 22:17:22.000.089,=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/06 22:18:31.000.718,D:\Delphi\Projetos\Teste_Delphi\Controller.Produtos.Interfaces.pas=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/06 22:18:48.000.426,=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/06 22:22:08.000.855,D:\Delphi\Projetos\Teste_Delphi\Controller.Produtos.pas=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/07 18:32:45.000.130,=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/07 18:35:13.000.052,D:\Delphi\Projetos\Teste_Delphi\Entidades.Pedidos.pas=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/07 18:38:03.000.809,=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/07 18:44:41.000.626,D:\Delphi\Projetos\Teste_Delphi\Entidades.Itens_Pedidos.pas=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/07 19:11:36.000.473,=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/07 19:12:59.000.278,D:\Delphi\Projetos\Teste_Delphi\Controller.Pedidos.Interfaces.pas=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/07 19:20:18.000.200,=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/07 19:22:05.000.950,D:\Delphi\Projetos\Teste_Delphi\Controller.Itens_Pedidos.Interfaces.pas=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/07 19:25:16.000.217,=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/07 19:53:00.000.636,D:\Delphi\Projetos\Teste_Delphi\Controller.Pedidos.pas=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/07 20:04:43.000.717,=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/07 20:49:59.000.517,D:\Delphi\Projetos\Teste_Delphi\Controller.Itens_Pedidos.pas=D:\Delphi\Projetos\Teste_Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/07/07 21:33:31.000.496,D:\Delphi\Projetos\Teste_Delphi\Entidades\Entidades.Itens_Pedidos.pas=D:\Delphi\Projetos\Teste_Delphi\Entidades.Itens_Pedidos.pas</Transaction>
+    <Transaction>2021/07/07 21:33:47.000.764,D:\Delphi\Projetos\Teste_Delphi\Entidades\Entidades.Produtos.pas=D:\Delphi\Projetos\Teste_Delphi\Entidades.Produtos.pas</Transaction>
+    <Transaction>2021/07/07 21:33:57.000.481,D:\Delphi\Projetos\Teste_Delphi\Entidades\Entidades.Pedidos.pas=D:\Delphi\Projetos\Teste_Delphi\Entidades.Pedidos.pas</Transaction>
+    <Transaction>2021/07/07 21:34:38.000.114,D:\Delphi\Projetos\Teste_Delphi\Entidades\Entidades.Clientes.pas=D:\Delphi\Projetos\Teste_Delphi\Entidades.Clientes.pas</Transaction>
+    <Transaction>2021/07/07 21:35:01.000.071,D:\Delphi\Projetos\Teste_Delphi\Controller\Controller.Itens_Pedidos.pas=D:\Delphi\Projetos\Teste_Delphi\Controller.Itens_Pedidos.pas</Transaction>
+    <Transaction>2021/07/07 21:35:15.000.517,D:\Delphi\Projetos\Teste_Delphi\Controller\Controller.Pedidos.pas=D:\Delphi\Projetos\Teste_Delphi\Controller.Pedidos.pas</Transaction>
+    <Transaction>2021/07/07 21:35:23.000.995,D:\Delphi\Projetos\Teste_Delphi\Controller\Controller.Itens_Pedidos.Interfaces.pas=D:\Delphi\Projetos\Teste_Delphi\Controller.Itens_Pedidos.Interfaces.pas</Transaction>
+    <Transaction>2021/07/07 21:35:32.000.937,D:\Delphi\Projetos\Teste_Delphi\Controller\Controller.Pedidos.Interfaces.pas=D:\Delphi\Projetos\Teste_Delphi\Controller.Pedidos.Interfaces.pas</Transaction>
+    <Transaction>2021/07/07 21:35:45.000.187,D:\Delphi\Projetos\Teste_Delphi\Controller\Controller.Produtos.pas=D:\Delphi\Projetos\Teste_Delphi\Controller.Produtos.pas</Transaction>
+    <Transaction>2021/07/07 21:35:55.000.054,D:\Delphi\Projetos\Teste_Delphi\Controller\Controller.Produtos.Interfaces.pas=D:\Delphi\Projetos\Teste_Delphi\Controller.Produtos.Interfaces.pas</Transaction>
+    <Transaction>2021/07/07 21:36:06.000.734,D:\Delphi\Projetos\Teste_Delphi\Controller\Controller.Clientes.pas=D:\Delphi\Projetos\Teste_Delphi\Controller.Clientes.pas</Transaction>
+    <Transaction>2021/07/07 21:36:18.000.234,D:\Delphi\Projetos\Teste_Delphi\Controller\Controller.Clientes.Interfaces.pas=D:\Delphi\Projetos\Teste_Delphi\Controller.Clientes.Interfaces.pas</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Controller"/>
+    <File Path="Controller\Controller.Itens_Pedidos.pas"/>
+    <File Path="Controller\Controller.Pedidos.pas"/>
+    <File Path="Controller\Controller.Itens_Pedidos.Interfaces.pas"/>
+    <File Path="Controller\Controller.Pedidos.Interfaces.pas"/>
+    <File Path="Controller\Controller.Produtos.pas"/>
+    <File Path="Controller\Controller.Produtos.Interfaces.pas"/>
+    <File Path="Controller\Controller.Clientes.pas"/>
+    <File Path="Controller\Controller.Clientes.Interfaces.pas"/>
+    <File Path="Entidades"/>
+    <File Path="Entidades\Entidades.Itens_Pedidos.pas"/>
+    <File Path="Entidades\Entidades.Produtos.pas"/>
+    <File Path="Entidades\Entidades.Pedidos.pas"/>
+    <File Path="Entidades\Entidades.Clientes.pas"/>
+    <File Path="uDMDados.pas"/>
+    <File Path="uDMDados.dfm"/>
+    <File Path="uPrincipal.pas"/>
+    <File Path="uPrincipal.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>
